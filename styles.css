@@ -8,3 +8,16 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     color: lightblue
 }
+
+.container{
+    position: relative;
+    text-align: center;
+    color: blueviolet;
+}
+
+.center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

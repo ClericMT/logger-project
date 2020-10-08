@@ -1,21 +1,8 @@
 // 8=>
 // version 1.1.1
 // Embedded text within svgs
-// Need to minimalise code and switch circles off feature
-// Need to change timer to hh:mm:ss
-// Timer start is slow?
 
-
-//Modules not working in browser
-import Colors from './colors';
-console.log(Colors.test)
-
-
-firstTimer.innerHTML = 'Project 1'
-secondTimer.innerHTML = 'Project 2'
-thirdTimer.innerHTML = 'Project 3'
-
-//Reset timer
+//Manually change timer values or reset data ()
 function reset(id,val){
     window.localStorage.setItem(id,val)
 }
@@ -24,6 +11,10 @@ function reset(id,val){
 let data01 = window.localStorage.getItem('Project 1')
 let data02 = window.localStorage.getItem('Project 2')
 let data03 = window.localStorage.getItem('Project 3')
+
+firstTimer.innerHTML = 'Project 1'
+secondTimer.innerHTML = 'Project 2'
+thirdTimer.innerHTML = 'Project 3'
 
 //Determines which timer to start
 body.addEventListener('click', event => {
@@ -37,7 +28,6 @@ body.addEventListener('click', event => {
             secondClass.toggleSwitch(z)
             break;
         case thirdTimer:
-            circle03.src = "./svg/circle02.svg"
             thirdClass.toggleSwitch(z)
             break;
     }
@@ -61,7 +51,7 @@ class Time {
         let intTime = setInterval(() => {(this._active == true) ? this.updateText(z,x++):clearInterval(intTime)}, 1000);
     }
     updateText(z,x){
-        z.innerHTML = x;
+        (z.innerHTML = x);
         this._time = x
         window.localStorage.setItem(this._project,x)
     }
